@@ -1,29 +1,40 @@
- "items": [
-  "badge": "📢 Webinar Săptămânal",
-  "titlu": "Descoperă Oportunitatea de Afacere Destine Holding",
-  "text": "Te gândești să îți construiești o carieră de succes în asigurări și servicii financiare? Acest webinar oferă claritate invitaților cu privire la activitățile Destine, detaliind portofoliul, planul de carieră și pașii pentru colaborare. ✉️ Pentru a primi link-ul de acces, rezervă-ți locul acum prin telefon sau prin formularul de pe site.",
-  "data": "📅 În fiecare miercuri de la ora 19:00"
-"badge": "🔥 Ofertă",
+{
+  "items": [
+    {
+      "badge": "📚 Curs",
+      "titlu": "Curs autorizat Broker de Asigurări — Sesiunea Mai 2026",
+      "text": "Înscrie-te la cursul autorizat ASF pentru obținerea calificării de broker de asigurări. Locuri limitate!",
+      "data": "📅 15 Mai 2026 · Contactează-ne pentru detalii"
+    },
+    {
+      "badge": "🔥 Ofertă",
       "titlu": "RCA la cel mai mic preț — Economisești până la 30%",
       "text": "Comparăm toate companiile autorizate și îți găsim cea mai bună ofertă RCA. Fără comisioane ascunse.",
       "data": "📅 Valabil tot sezonul 2026"
- "badge": "💡 Noutate",
+    },
+    {
+      "badge": "💡 Noutate",
       "titlu": "Asigurare de sănătate privată — Ofertă specială familii",
       "text": "Pachete avantajoase pentru familii cu acces la clinici premium. Obține o ofertă personalizată astăzi.",
       "data": "📅 Ofertă lunară · Mai 2026"
- "badge": "🔥 Ofertă",
+    },
+    {
+      "badge": "📚 Curs",
+      "titlu": "Curs legislație asigurări — Noutăți 2026",
+      "text": "Seminar online dedicat brokerilor și agenților de asigurări — modificări legislative și norme ASF 2026.",
+      "data": "📅 28 Mai 2026 · Online"
+    },
+    {
+      "badge": "🔥 Ofertă",
       "titlu": "CASCO avantajos pentru flotă auto — Reduceri speciale",
       "text": "Dacă ai mai multe vehicule, beneficiezi de tarife preferențiale CASCO negociate direct cu asigurătorii.",
       "data": "📅 Ofertă permanentă"
-"badge": "💡 Noutate",
+    },
+    {
+      "badge": "💡 Noutate",
       "titlu": "Asigurare de călătorie — Emisă online în 5 minute",
       "text": "Pleci în vacanță? Emitem asigurarea de călătorie instant, pentru Europa și toată lumea.",
       "data": "📅 Disponibil non-stop"
-"badge": "⚡ Last Minute",
-  "titlu": "Bagajele făcute? Plecări imediate la prețuri imbatabile",
-  "text": "Prinzi cele mai mari reduceri pentru plecările din următoarele zile. Locuri limitate pentru Grecia, Turcia și Egipt!",
-  "data": "📅 În limita locurilor disponibile"
-"badge": "🌍 Personalizat",
-  "titlu": "Sejururi și circuite croite exact pe gustul tău",
-  "text": "Spune-ne unde vrei să mergi și noi ne ocupăm de tot: de la pachete de familie, până la escapade romantice sau aventuri.",
-  "data": "📅 Consultanță gratuită non-stop"
+    }
+  ]
+}
