@@ -1,17 +1,28 @@
- "items": [
+{
+  "items": [
+    {
       "initiale": "MG",
       "nume": "Mădălina Gospei",
       "rol": "Acționar",
       "companie": "Destine Holding"
-       "initiale": "TS",
+    },
+    {
+      "initiale": "TS",
       "nume": "Teres Silviu",
       "rol": "Broker Senior",
       "companie": "Destine Holding · RAF242468"
-       "initiale": "SP",
+    },
+    {
+      "initiale": "SP",
       "nume": "Silvica Popescu",
       "rol": "Broker",
       "companie": "Destine Holding"
-        "initiale": "TX",
+    },
+    {
+      "initiale": "TX",
       "nume": "Teres Xenia",
       "rol": "Broker",
       "companie": "Destine Holding"
+    }
+  ]
+}
