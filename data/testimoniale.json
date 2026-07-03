@@ -1,21 +1,34 @@
-"items": [
+{
+  "items": [
+    {
       "stele": 5,
       "text": "Am fost plăcut surprins de promptitudinea și profesionalismul echipei. Am primit oferta în câteva ore și prețul a fost cel mai bun din piață!",
       "autor": "Beniamin Catu",
       "tip": "Asigurare Auto RCA"
-       "stele": 5,
+    },
+    {
+      "stele": 5,
       "text": "Recomand cu încredere! Teres Silviu m-a ajutat să înțeleg exact ce acoperă polița și am economisit față de oferta anterioară.",
       "autor": "Bogdan Ladaru",
       "tip": "Asigurare Locuință"
+    },
+    {
       "stele": 5,
       "text": "Serviciu excelent! Am primit tot suportul necesar la dosarul de daună. Nu m-am așteptat să fie atât de simplu cu ajutorul lor.",
       "autor": "Dobre Diana",
       "tip": "Asigurare CASCO"
+    },
+    {
       "stele": 5,
       "text": "Am contactat AsigurPro pentru asigurarea firmei mele. Răspuns rapid, soluție personalizată și prețuri competitive. Mulțumesc!",
       "autor": "Adrian Dragu",
       "tip": "Asigurare Business"
+    },
+    {
       "stele": 5,
       "text": "Asigurarea de călătorie a fost emisă în 10 minute! Foarte convenabil înainte de plecare. Voi apela cu siguranță și data viitoare.",
       "autor": "Lorena Ciobotaru",
       "tip": "Asigurare Turism"
+    }
+  ]
+}
