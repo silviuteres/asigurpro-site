@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "ro"
+
+collections:
+  # ===== SETARI GENERALE (telefon, link SmartSales, program) =====
+  - name: "setari"
+    label: "⚙️ Setări generale"
+    files:
+      - name: "setari"
+        label: "Setări site"
+        file: "data/setari.json"
+        fields:
+          - { label: "Nume broker", name: "broker", widget: "string" }
+          - { label: "Nume companie", name: "companie", widget: "string" }
+          - { label: "Cod RAF", name: "cod_raf", widget: "string" }
+          - { label: "Telefon (afișat)", name: "telefon_afisat", widget: "string" }
+          - { label: "Telefon (link, ex: tel:07xxxxxxxx)", name: "telefon_link", widget: "string" }
+          - { label: "Număr WhatsApp (fără +, ex: 40758873736)", name: "whatsapp_numar", widget: "string" }
+          - { label: "Program de lucru", name: "program", widget: "string" }
+          - { label: "Activează butonul de cumpărare SmartSales", name: "smartsales_activ", widget: "boolean", default: true }
+          - { label: "Link personal SmartSales", name: "smartsales_link", widget: "string", hint: "Ex: https://scortanu-mariana.smartsales.ro/home/asigurari" }
+          - { label: "Text buton SmartSales", name: "smartsales_text", widget: "string", default: "Cumpără online acum" }
+
+  # ===== ANUNTURI =====
+  - name: "anunturi"
+    label: "📢 Anunțuri"
+    files:
+      - name: "anunturi"
+        label: "Listă anunțuri"
+        file: "data/anunturi.json"
+        fields:
+          - name: "items"
+            label: "Anunțuri"
+            widget: "list"
+            label_singular: "Anunț"
+            summary: "{{fields.titlu}}"
+            fields:
+              - { label: "Etichetă (ex: 🔥 Ofertă, 📚 Curs, 💡 Noutate)", name: "badge", widget: "string" }
+              - { label: "Titlu", name: "titlu", widget: "string" }
+              - { label: "Descriere", name: "text", widget: "text" }
+              - { label: "Dată / valabilitate (ex: 📅 15 Mai 2026)", name: "data", widget: "string" }
+
+  # ===== SERVICII =====
+  - name: "servicii"
+    label: "🛡️ Servicii / Pachete"
+    files:
+      - name: "servicii"
+        label: "Listă servicii"
+        file: "data/servicii.json"
+        fields:
+          - name: "items"
+            label: "Servicii"
+            widget: "list"
+            label_singular: "Serviciu"
+            summary: "{{fields.titlu}}"
+            fields:
+              - { label: "Iconiță (emoji)", name: "icon", widget: "string" }
+              - { label: "Titlu", name: "titlu", widget: "string" }
+              - { label: "Descriere", name: "text", widget: "text" }
+
+  # ===== ECHIPA =====
+  - name: "echipa"
+    label: "👥 Echipa"
+    files:
+      - name: "echipa"
+        label: "Membrii echipei"
+        file: "data/echipa.json"
+        fields:
+          - name: "items"
+            label: "Echipă"
+            widget: "list"
+            label_singular: "Membru"
+            summary: "{{fields.nume}}"
+            fields:
+              - { label: "Inițiale (pentru avatar)", name: "initiale", widget: "string" }
+              - { label: "Nume complet", name: "nume", widget: "string" }
+              - { label: "Rol", name: "rol", widget: "string" }
+              - { label: "Companie / detalii", name: "companie", widget: "string" }
+
+  # ===== TESTIMONIALE =====
+  - name: "testimoniale"
+    label: "⭐ Recenzii"
+    files:
+      - name: "testimoniale"
+        label: "Recenzii publicate"
+        file: "data/testimoniale.json"
+        fields:
+          - name: "items"
+            label: "Recenzii"
+            widget: "list"
+            label_singular: "Recenzie"
+            summary: "{{fields.autor}} — {{fields.tip}}"
+            fields:
+              - { label: "Număr stele (1-5)", name: "stele", widget: "number", min: 1, max: 5, default: 5 }
+              - { label: "Textul recenziei", name: "text", widget: "text" }
+              - { label: "Numele autorului", name: "autor", widget: "string" }
+              - { label: "Tip asigurare", name: "tip", widget: "string" }
