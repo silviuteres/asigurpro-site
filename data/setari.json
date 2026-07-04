@@ -1,4 +1,5 @@
-"broker": "Teres Silviu",
+{
+  "broker": "Teres Silviu",
   "companie": "Destine Holding",
   "cod_raf": "RAF242468",
   "telefon_afisat": "0758 873 736",
@@ -8,3 +9,4 @@
   "smartsales_activ": true,
   "smartsales_link": "https://scortanu-mariana.smartsales.ro/home/asigurari",
   "smartsales_text": "Cumpără online acum"
+}
