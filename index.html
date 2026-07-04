@@ -5,7 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AsigurPro – Broker Destine Holding | Teres Silviu</title>
 <meta name="description" content="Broker de asigurări autorizat în cadrul Destine Holding. Asigurări auto, locuință, sănătate, business, credite și turism în toată România. Cod RAF242468.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="canonical" href="https://asigurpro.ro/">
+
+<!-- Open Graph (afișare la distribuire pe Facebook/WhatsApp/LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AsigurPro – Broker de Asigurări | Destine Holding">
+<meta property="og:description" content="Broker de asigurări autorizat: RCA, CASCO, locuință, sănătate, business, credite și turism. Ofertă rapidă, prețuri competitive.">
+<meta property="og:url" content="https://asigurpro.ro/">
+<meta property="og:locale" content="ro_RO">
+
+<!-- Date structurate pentru Google (apar în rezultatele căutării: adresă, telefon, rating) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "AsigurPro – Destine Holding",
+  "url": "https://asigurpro.ro/",
+  "telephone": "+40758873736",
+  "areaServed": "RO",
+  "founder": { "@type": "Person", "name": "Teres Silviu" },
+  "priceRange": "$$"
+}
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -455,6 +476,17 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
 <!-- WHATSAPP -->
 <a href="https://wa.me/40758873736" id="wa-btn" target="_blank" class="wa-btn" title="Scrie-ne pe WhatsApp">💬</a>
 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+// Dacă cineva ajunge pe pagina principală cu un link de invitație/recuperare parolă,
+// îl redirecționăm automat către panoul de admin, unde e procesat corect.
+if (window.location.hash && window.location.hash.includes('invite_token')) {
+  window.location.replace('/admin/' + window.location.hash);
+}
+if (window.location.hash && window.location.hash.includes('recovery_token')) {
+  window.location.replace('/admin/' + window.location.hash);
+}
+</script>
 <script>
 // ÎNCARCĂ CONȚINUTUL DIN /data (editabil din /admin)
 async function incarcaContinut() {
