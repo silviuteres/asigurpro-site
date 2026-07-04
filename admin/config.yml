@@ -83,6 +83,25 @@ collections:
               - { label: "Rol", name: "rol", widget: "string" }
               - { label: "Companie / detalii", name: "companie", widget: "string" }
 
+  # ===== BLOG =====
+  - name: "blog"
+    label: "📝 Blog"
+    files:
+      - name: "blog"
+        label: "Articole"
+        file: "data/blog.json"
+        fields:
+          - name: "items"
+            label: "Articole"
+            widget: "list"
+            label_singular: "Articol"
+            summary: "{{fields.titlu}}"
+            fields:
+              - { label: "Titlu", name: "titlu", widget: "string" }
+              - { label: "Dată (ex: 📅 Iulie 2026)", name: "data", widget: "string" }
+              - { label: "Extras scurt (apare pe cardul din listă)", name: "extras", widget: "text" }
+              - { label: "Conținut complet (paragrafele separate printr-o linie goală)", name: "continut", widget: "text" }
+
   # ===== TESTIMONIALE =====
   - name: "testimoniale"
     label: "⭐ Recenzii"
