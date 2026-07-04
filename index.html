@@ -230,6 +230,7 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
     <a onclick="document.getElementById('anunturi').scrollIntoView({behavior:'smooth'})">Anunțuri</a>
     <a onclick="document.getElementById('servicii').scrollIntoView({behavior:'smooth'})">Servicii</a>
     <a onclick="document.getElementById('echipa').scrollIntoView({behavior:'smooth'})">Echipa</a>
+    <a onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Blog</a>
     <a onclick="document.getElementById('testimoniale').scrollIntoView({behavior:'smooth'})">Recenzii</a>
     <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
   </div>
@@ -316,6 +317,26 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
   </div>
   <div class="echipa-grid" id="echipa-grid"></div>
 </section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="section-header">
+    <span class="section-tag">Resurse utile</span>
+    <h2 class="section-title">Din blogul AsigurPro</h2>
+    <p class="section-sub">Sfaturi și informații utile despre asigurări, explicate simplu.</p>
+  </div>
+  <div class="services-grid" id="blog-grid"></div>
+</section>
+
+<!-- MODAL ARTICOL BLOG -->
+<div id="blog-modal" style="display:none;position:fixed;inset:0;background:rgba(26,13,0,.75);z-index:9999;padding:20px;overflow-y:auto" onclick="if(event.target===this) closeBlogModal()">
+  <div style="max-width:700px;margin:40px auto;background:#fff;border-radius:16px;padding:36px;position:relative">
+    <button onclick="closeBlogModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray)">✕</button>
+    <p id="blog-modal-data" style="color:var(--orange);font-size:13px;font-weight:500;margin-bottom:8px"></p>
+    <h2 id="blog-modal-titlu" style="font-family:'Playfair Display',serif;margin-bottom:16px"></h2>
+    <div id="blog-modal-continut" style="line-height:1.7;color:var(--text)"></div>
+  </div>
+</div>
 
 <!-- TESTIMONIALE -->
 <section class="testimoniale" id="testimoniale">
@@ -491,12 +512,13 @@ if (window.location.hash && window.location.hash.includes('recovery_token')) {
 // ÎNCARCĂ CONȚINUTUL DIN /data (editabil din /admin)
 async function incarcaContinut() {
   try {
-    const [setari, anunturi, servicii, echipa, testimoniale] = await Promise.all([
+    const [setari, anunturi, servicii, echipa, testimoniale, blog] = await Promise.all([
       fetch('data/setari.json').then(r => r.json()),
       fetch('data/anunturi.json').then(r => r.json()),
       fetch('data/servicii.json').then(r => r.json()),
       fetch('data/echipa.json').then(r => r.json()),
-      fetch('data/testimoniale.json').then(r => r.json())
+      fetch('data/testimoniale.json').then(r => r.json()),
+      fetch('data/blog.json').then(r => r.json())
     ]);
 
     // SETARI GENERALE
@@ -562,11 +584,34 @@ async function incarcaContinut() {
       </div>`).join('');
     ctaCard.insertAdjacentHTML('beforebegin', testHtml);
 
+    // BLOG
+    window._blogItems = blog.items;
+    document.getElementById('blog-grid').innerHTML = blog.items.map((b, i) => `
+      <div class="srv-card" style="cursor:pointer" onclick="openBlogModal(${i})">
+        <p style="color:var(--orange);font-size:12px;font-weight:500;margin-bottom:8px">${b.data}</p>
+        <h3>${b.titlu}</h3>
+        <p>${b.extras}</p>
+        <p style="color:var(--orange);font-size:13px;font-weight:500;margin-top:12px">Citește mai mult →</p>
+      </div>`).join('');
+
   } catch (err) {
     console.error('Eroare la încărcarea conținutului:', err);
   }
 }
 incarcaContinut();
+
+function openBlogModal(i) {
+  const b = window._blogItems[i];
+  document.getElementById('blog-modal-data').textContent = b.data;
+  document.getElementById('blog-modal-titlu').textContent = b.titlu;
+  document.getElementById('blog-modal-continut').innerHTML = b.continut.split('\n\n').map(p => `<p style="margin-bottom:14px">${p}</p>`).join('');
+  document.getElementById('blog-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeBlogModal() {
+  document.getElementById('blog-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
 
 // STARS
 let starsVal = 5;
