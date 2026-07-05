@@ -394,6 +394,13 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
         <label>Recenzia ta *</label>
         <textarea name="recenzie" placeholder="Spune-ne despre experiența ta cu AsigurPro..." required></textarea>
       </div>
+      <div class="fg" style="display:flex;align-items:flex-start;gap:8px">
+        <input type="checkbox" id="gdpr-recenzie" name="acord_gdpr" required style="margin-top:4px;width:auto">
+        <label for="gdpr-recenzie" style="font-weight:400;font-size:13px;line-height:1.5">
+          Sunt de acord ca datele introduse mai sus să fie prelucrate și publicate pe site, conform
+          <a onclick="openLegalModal('confidentialitate')" style="color:var(--orange);cursor:pointer;text-decoration:underline">Politicii de Confidențialitate</a>. *
+        </label>
+      </div>
       <button type="submit" class="submit-btn">Trimite recenzia</button>
     </form>
   </div>
@@ -462,6 +469,13 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
           </select>
         </div>
         <div class="fg"><label>Mesaj (opțional)</label><textarea name="mesaj" placeholder="Descrie pe scurt ce ai nevoie..."></textarea></div>
+        <div class="fg" style="display:flex;align-items:flex-start;gap:8px">
+          <input type="checkbox" id="gdpr-contact" name="acord_gdpr" required style="margin-top:4px;width:auto">
+          <label for="gdpr-contact" style="font-weight:400;font-size:13px;line-height:1.5">
+            Sunt de acord ca datele mele să fie prelucrate pentru a fi contactat/ă în legătură cu solicitarea de ofertă, conform
+            <a onclick="openLegalModal('confidentialitate')" style="color:var(--orange);cursor:pointer;text-decoration:underline">Politicii de Confidențialitate</a>. *
+          </label>
+        </div>
         <button type="submit" class="submit-btn" id="submit-btn">Trimite cererea</button>
       </form>
     </div>
@@ -493,9 +507,31 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
   </div>
   <div class="footer-bottom">
     <span>© 2026 AsigurPro · Teres Silviu · Destine Holding</span>
-    <span>Broker autorizat ASF · RAF242468</span>
+    <span style="display:flex;gap:16px;flex-wrap:wrap">
+      <a onclick="openLegalModal('confidentialitate')" style="color:rgba(255,255,255,0.4);cursor:pointer;text-decoration:underline">Politica de Confidențialitate</a>
+      <a onclick="openLegalModal('cookies')" style="color:rgba(255,255,255,0.4);cursor:pointer;text-decoration:underline">Politica de Cookie-uri</a>
+      <span>Broker autorizat ASF · RAF242468</span>
+    </span>
   </div>
 </footer>
+
+<!-- MODAL LEGAL (Confidențialitate / Cookies) -->
+<div id="legal-modal" style="display:none;position:fixed;inset:0;background:rgba(26,13,0,.75);z-index:9999;padding:20px;overflow-y:auto" onclick="if(event.target===this) closeLegalModal()">
+  <div style="max-width:750px;margin:40px auto;background:#fff;border-radius:16px;padding:36px;position:relative">
+    <button onclick="closeLegalModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray)">✕</button>
+    <h2 id="legal-modal-titlu" style="font-family:'Playfair Display',serif;margin-bottom:16px"></h2>
+    <div id="legal-modal-continut" style="line-height:1.7;color:var(--text);font-size:14px"></div>
+  </div>
+</div>
+
+<!-- BANNER COOKIE-URI -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a0d00;color:#fff;padding:18px 5%;z-index:9998;display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+  <p style="font-size:13px;color:rgba(255,255,255,.8);margin:0;flex:1;min-width:250px">
+    Folosim cookie-uri strict necesare pentru funcționarea site-ului. Pentru detalii, vezi
+    <a onclick="openLegalModal('cookies')" style="color:var(--orange);cursor:pointer;text-decoration:underline">Politica de Cookie-uri</a>.
+  </p>
+  <button onclick="acceptCookies()" class="submit-btn" style="width:auto;padding:10px 22px;flex-shrink:0">Am înțeles</button>
+</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/40758873736" id="wa-btn" target="_blank" class="wa-btn" title="Scrie-ne pe WhatsApp">💬</a>
@@ -515,13 +551,14 @@ if (window.location.hash && window.location.hash.includes('recovery_token')) {
 // ÎNCARCĂ CONȚINUTUL DIN /data (editabil din /admin)
 async function incarcaContinut() {
   try {
-    const [setari, anunturi, servicii, echipa, testimoniale, blog] = await Promise.all([
+    const [setari, anunturi, servicii, echipa, testimoniale, blog, legal] = await Promise.all([
       fetch('data/setari.json').then(r => r.json()),
       fetch('data/anunturi.json').then(r => r.json()),
       fetch('data/servicii.json').then(r => r.json()),
       fetch('data/echipa.json').then(r => r.json()),
       fetch('data/testimoniale.json').then(r => r.json()),
-      fetch('data/blog.json').then(r => r.json())
+      fetch('data/blog.json').then(r => r.json()),
+      fetch('data/legal.json').then(r => r.json())
     ]);
 
     // SETARI GENERALE
@@ -597,11 +634,38 @@ async function incarcaContinut() {
         <p style="color:var(--orange);font-size:13px;font-weight:500;margin-top:12px">Citește mai mult →</p>
       </div>`).join('');
 
+    // LEGAL (confidențialitate + cookies)
+    window._legalTexts = legal;
+
   } catch (err) {
     console.error('Eroare la încărcarea conținutului:', err);
   }
 }
 incarcaContinut();
+
+function openLegalModal(tip) {
+  const texte = window._legalTexts;
+  if (!texte) return;
+  const titlu = tip === 'cookies' ? 'Politica de Cookie-uri' : 'Politica de Confidențialitate';
+  const continut = tip === 'cookies' ? texte.cookies : texte.confidentialitate;
+  document.getElementById('legal-modal-titlu').textContent = titlu;
+  document.getElementById('legal-modal-continut').innerHTML = continut.split('\n\n').map(p => `<p style="margin-bottom:14px">${p}</p>`).join('');
+  document.getElementById('legal-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeLegalModal() {
+  document.getElementById('legal-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// BANNER COOKIE-URI
+if (!localStorage.getItem('cookie_consent_asigurpro')) {
+  document.getElementById('cookie-banner').style.display = 'flex';
+}
+function acceptCookies() {
+  localStorage.setItem('cookie_consent_asigurpro', '1');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
 
 function openBlogModal(i) {
   const b = window._blogItems[i];
