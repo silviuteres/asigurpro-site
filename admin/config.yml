@@ -102,6 +102,19 @@ collections:
               - { label: "Extras scurt (apare pe cardul din listă)", name: "extras", widget: "text" }
               - { label: "Conținut complet (paragrafele separate printr-o linie goală)", name: "continut", widget: "text" }
 
+  # ===== LEGAL / GDPR =====
+  - name: "legal"
+    label: "🔒 Legal / GDPR"
+    files:
+      - name: "legal"
+        label: "Texte legale"
+        file: "data/legal.json"
+        fields:
+          - { label: "Operator de date (text afișat)", name: "operator", widget: "string" }
+          - { label: "Text contact pentru exercitarea drepturilor", name: "contact_date", widget: "text" }
+          - { label: "Politica de Confidențialitate (paragrafele separate printr-o linie goală)", name: "confidentialitate", widget: "text" }
+          - { label: "Politica de Cookie-uri (paragrafele separate printr-o linie goală)", name: "cookies", widget: "text" }
+
   # ===== TESTIMONIALE =====
   - name: "testimoniale"
     label: "⭐ Recenzii"
