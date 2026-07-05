@@ -360,7 +360,8 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
     <h3>Lasă o recenzie</h3>
     <p>Recenzia ta va fi verificată și publicată după aprobare. Mulțumim!</p>
     <div id="test-success" class="test-success">✅ Recenzia ta a fost trimisă! O vom publica după verificare. Mulțumim!</div>
-    <form id="test-form">
+    <form id="test-form" name="recenzie" data-netlify="true">
+      <input type="hidden" name="form-name" value="recenzie">
       <div class="fg">
         <label>Numele tău *</label>
         <input type="text" name="nume_recenzor" placeholder="Prenume Nume" required>
@@ -440,7 +441,9 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
       <h3>Solicită o ofertă gratuită</h3>
       <div class="contact-raf">Broker autorizat: <strong>Teres Silviu</strong> · Destine Holding · Cod RAF: <strong>RAF242468</strong></div>
       <div id="form-success" class="form-success">✅ Cererea a fost trimisă! Teres Silviu te va contacta în curând.</div>
-      <form id="contact-form">
+      <form id="contact-form" name="contact" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Nu completa acest câmp dacă ești om: <input name="bot-field"></label></p>
         <div class="form-row">
           <div class="fg"><label>Nume *</label><input type="text" name="nume" placeholder="Prenume Nume" required></div>
           <div class="fg"><label>Telefon *</label><input type="tel" name="telefon" placeholder="07xx xxx xxx" required></div>
@@ -626,6 +629,11 @@ document.querySelectorAll('.star-btn').forEach(btn => {
   });
 });
 
+// Funcție ajutătoare pentru codificarea datelor în formatul cerut de Netlify Forms
+function encodeFormData(data) {
+  return Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+}
+
 // CONTACT FORM
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -633,9 +641,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   btn.textContent = 'Se trimite...';
   btn.disabled = true;
   try {
-    const res = await fetch('https://formspree.io/f/xvzyzjze', {
-      method: 'POST', body: new FormData(this),
-      headers: {'Accept': 'application/json'}
+    const formData = Object.fromEntries(new FormData(this).entries());
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encodeFormData(formData)
     });
     if (res.ok) {
       this.style.display = 'none';
@@ -647,12 +657,12 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 // TESTIMONIAL FORM
 document.getElementById('test-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const data = new FormData(this);
-  data.append('_subject', 'Recenzie nouă — AsigurPro (necesită aprobare)');
   try {
-    const res = await fetch('https://formspree.io/f/xvzyzjze', {
-      method: 'POST', body: data,
-      headers: {'Accept': 'application/json'}
+    const formData = Object.fromEntries(new FormData(this).entries());
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encodeFormData(formData)
     });
     if (res.ok) {
       this.style.display = 'none';
