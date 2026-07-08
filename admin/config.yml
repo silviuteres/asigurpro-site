@@ -26,6 +26,8 @@ collections:
           - { label: "Activează butonul de cumpărare SmartSales", name: "smartsales_activ", widget: "boolean", default: true }
           - { label: "Link personal SmartSales", name: "smartsales_link", widget: "string", hint: "Ex: https://scortanu-mariana.smartsales.ro/home/asigurari" }
           - { label: "Text buton SmartSales", name: "smartsales_text", widget: "string", default: "Cumpără online acum" }
+          - { label: "Activează secțiunea de Newsletter", name: "newsletter_activ", widget: "boolean", default: false }
+          - { label: "Cod formular Newsletter (lipit de la Brevo/Mailchimp/etc.)", name: "newsletter_embed", widget: "text", hint: "Copiază aici codul HTML de embed al formularului de abonare, de exemplu din Brevo → Campaigns → Forms → Share → HTML code." }
 
   # ===== ANUNTURI =====
   - name: "anunturi"
@@ -82,6 +84,19 @@ collections:
               - { label: "Nume complet", name: "nume", widget: "string" }
               - { label: "Rol", name: "rol", widget: "string" }
               - { label: "Companie / detalii", name: "companie", widget: "string" }
+
+  # ===== CARIERE =====
+  - name: "cariere"
+    label: "💼 Cariere / Recrutare"
+    files:
+      - name: "cariere"
+        label: "Conținut pagină cariere"
+        file: "data/cariere.json"
+        fields:
+          - { label: "Titlu secțiune", name: "titlu", widget: "string" }
+          - { label: "Text introductiv", name: "intro", widget: "text" }
+          - { label: "Ce oferim (o linie per beneficiu)", name: "beneficii", widget: "list" }
+          - { label: "Ce căutăm (o linie per cerință)", name: "cerinte", widget: "list" }
 
   # ===== BLOG =====
   - name: "blog"
