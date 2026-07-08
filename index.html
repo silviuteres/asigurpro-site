@@ -231,6 +231,7 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
     <a onclick="document.getElementById('servicii').scrollIntoView({behavior:'smooth'})">Servicii</a>
     <a onclick="document.getElementById('echipa').scrollIntoView({behavior:'smooth'})">Echipa</a>
     <a onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Blog</a>
+    <a onclick="document.getElementById('cariere').scrollIntoView({behavior:'smooth'})">Cariere</a>
     <a onclick="document.getElementById('testimoniale').scrollIntoView({behavior:'smooth'})">Recenzii</a>
     <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
   </div>
@@ -339,6 +340,47 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
 </div>
 
 <!-- TESTIMONIALE -->
+<!-- CARIERE / RECRUTARE -->
+<section class="cariere" id="cariere" style="background:var(--dark, #1a0d00);color:#fff;padding:64px 5%">
+  <div class="section-header">
+    <span class="section-tag" style="color:var(--orange)">Alătură-te echipei</span>
+    <h2 class="section-title" style="color:#fff" id="cariere-titlu">Devino broker/agent colaborator AsigurPro</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.7)" id="cariere-intro">Căutăm oameni serioși, cu sau fără experiență în asigurări, care vor să-și construiască o carieră flexibilă, cu venituri direct proporționale cu implicarea.</p>
+  </div>
+  <div style="max-width:900px;margin:32px auto;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div>
+      <h3 style="color:var(--orange);font-size:16px;margin-bottom:12px">Ce oferim</h3>
+      <ul id="cariere-beneficii" style="color:rgba(255,255,255,.8);font-size:14px;line-height:1.9;padding-left:18px"></ul>
+    </div>
+    <div>
+      <h3 style="color:var(--orange);font-size:16px;margin-bottom:12px">Ce căutăm</h3>
+      <ul id="cariere-cerinte" style="color:rgba(255,255,255,.8);font-size:14px;line-height:1.9;padding-left:18px"></ul>
+    </div>
+  </div>
+  <div style="max-width:480px;margin:40px auto 0;background:#fff;border-radius:16px;padding:32px">
+    <h3 style="color:var(--text, #1a0d00);margin-bottom:18px;text-align:center">Aplică acum</h3>
+    <form id="cariere-form" name="cariere" data-netlify="true">
+      <input type="hidden" name="form-name" value="cariere">
+      <div class="fg"><label>Nume complet *</label><input type="text" name="nume" required></div>
+      <div class="fg"><label>Telefon *</label><input type="tel" name="telefon" required></div>
+      <div class="fg"><label>Email</label><input type="email" name="email"></div>
+      <div class="fg"><label>Spune-ne pe scurt despre tine (experiență, disponibilitate)</label><textarea name="mesaj" placeholder="Ex: Nu am experiență în asigurări, dar sunt interesat/ă să învăț..."></textarea></div>
+      <div class="fg" style="display:flex;align-items:flex-start;gap:8px">
+        <input type="checkbox" id="gdpr-cariere" name="acord_gdpr" required style="margin-top:4px;width:auto">
+        <label for="gdpr-cariere" style="font-weight:400;font-size:13px;line-height:1.5">
+          Sunt de acord ca datele mele să fie prelucrate în scopul acestei aplicații de recrutare, conform
+          <a onclick="openLegalModal('confidentialitate')" style="color:var(--orange);cursor:pointer;text-decoration:underline">Politicii de Confidențialitate</a>. *
+        </label>
+      </div>
+      <button type="submit" class="submit-btn" id="cariere-submit-btn">Trimite aplicația</button>
+    </form>
+    <div id="cariere-success" style="display:none;text-align:center;padding:20px 0">
+      <p style="font-size:32px;margin-bottom:10px">✅</p>
+      <p style="color:var(--text, #1a0d00)">Mulțumim! Am primit aplicația ta și te vom contacta în curând.</p>
+    </div>
+  </div>
+</section>
+
 <section class="testimoniale" id="testimoniale">
   <div class="section-header">
     <span class="section-tag">Clienți mulțumiți</span>
@@ -482,6 +524,15 @@ footer{background:#0f0700;padding:48px 5% 24px;border-top:1px solid rgba(232,93,
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section id="newsletter-section" style="display:none;background:var(--cream, #fdf6ee);padding:56px 5%;text-align:center">
+  <div style="max-width:560px;margin:0 auto">
+    <h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:10px">Abonează-te la newsletter</h2>
+    <p style="color:var(--gray);margin-bottom:24px">Sfaturi despre asigurări, oferte și noutăți — direct în inbox, fără spam.</p>
+    <div id="newsletter-embed-container"></div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -551,14 +602,15 @@ if (window.location.hash && window.location.hash.includes('recovery_token')) {
 // ÎNCARCĂ CONȚINUTUL DIN /data (editabil din /admin)
 async function incarcaContinut() {
   try {
-    const [setari, anunturi, servicii, echipa, testimoniale, blog, legal] = await Promise.all([
+    const [setari, anunturi, servicii, echipa, testimoniale, blog, legal, cariere] = await Promise.all([
       fetch('data/setari.json').then(r => r.json()),
       fetch('data/anunturi.json').then(r => r.json()),
       fetch('data/servicii.json').then(r => r.json()),
       fetch('data/echipa.json').then(r => r.json()),
       fetch('data/testimoniale.json').then(r => r.json()),
       fetch('data/blog.json').then(r => r.json()),
-      fetch('data/legal.json').then(r => r.json())
+      fetch('data/legal.json').then(r => r.json()),
+      fetch('data/cariere.json').then(r => r.json())
     ]);
 
     // SETARI GENERALE
@@ -633,6 +685,25 @@ async function incarcaContinut() {
         <p>${b.extras}</p>
         <p style="color:var(--orange);font-size:13px;font-weight:500;margin-top:12px">Citește mai mult →</p>
       </div>`).join('');
+
+    // CARIERE
+    document.getElementById('cariere-titlu').textContent = cariere.titlu;
+    document.getElementById('cariere-intro').textContent = cariere.intro;
+    document.getElementById('cariere-beneficii').innerHTML = cariere.beneficii.map(b => `<li>${b}</li>`).join('');
+    document.getElementById('cariere-cerinte').innerHTML = cariere.cerinte.map(c => `<li>${c}</li>`).join('');
+
+    // NEWSLETTER
+    if (setari.newsletter_activ && setari.newsletter_embed) {
+      document.getElementById('newsletter-embed-container').innerHTML = setari.newsletter_embed;
+      document.getElementById('newsletter-section').style.display = 'block';
+      // Re-execută orice <script> venit din codul lipit (browserele nu le rulează automat din innerHTML)
+      document.querySelectorAll('#newsletter-embed-container script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+        newScript.textContent = oldScript.textContent;
+        oldScript.replaceWith(newScript);
+      });
+    }
 
     // LEGAL (confidențialitate + cookies)
     window._legalTexts = legal;
@@ -714,6 +785,26 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     if (res.ok) {
       this.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+    } else { btn.textContent = 'Eroare — încearcă din nou'; btn.disabled = false; }
+  } catch(err) { btn.textContent = 'Eroare — încearcă din nou'; btn.disabled = false; }
+});
+
+// CARIERE FORM
+document.getElementById('cariere-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('cariere-submit-btn');
+  btn.textContent = 'Se trimite...';
+  btn.disabled = true;
+  try {
+    const formData = Object.fromEntries(new FormData(this).entries());
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encodeFormData(formData)
+    });
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('cariere-success').style.display = 'block';
     } else { btn.textContent = 'Eroare — încearcă din nou'; btn.disabled = false; }
   } catch(err) { btn.textContent = 'Eroare — încearcă din nou'; btn.disabled = false; }
 });
