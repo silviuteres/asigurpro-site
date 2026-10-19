@@ -270,3 +270,10 @@ a.nav-cta,a.btn-ghost{text-decoration:none;display:inline-block}
   .poz-grid,.cariere-cols{grid-template-columns:1fr}
   .ck-actions{width:100%}.ck-actions .ck-btn{flex:1}
 }
+
+/* SIGLA */
+.nav-logo{display:flex!important;align-items:center}
+.nav-logo img{height:40px;width:auto;display:block}
+.footer-logo-img{display:inline-block;margin-bottom:12px}
+.footer-logo-img img{height:48px;width:auto;display:block}
+@media(max-width:480px){.nav-logo img{height:32px}}
