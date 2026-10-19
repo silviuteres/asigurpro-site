@@ -97,6 +97,20 @@ collections:
           - { label: "Text introductiv", name: "intro", widget: "text" }
           - { label: "Ce oferim (o linie per beneficiu)", name: "beneficii", widget: "list" }
           - { label: "Ce căutăm (o linie per cerință)", name: "cerinte", widget: "list" }
+          - name: "pozitii"
+            label: "Poziții deschise (opțional – fiecare primește link propriu)"
+            widget: "list"
+            required: false
+            label_singular: "Poziție"
+            summary: "{{fields.titlu}}"
+            fields:
+              - { label: "ID pentru link (fără spații/diacritice, ex: agent-vanzari)", name: "id", widget: "string", hint: "Linkul va fi asigurpro.ro/cariera/?pozitie=ID" }
+              - { label: "Titlu poziție", name: "titlu", widget: "string" }
+              - { label: "Locație (ex: Remote, București)", name: "locatie", widget: "string", required: false }
+              - { label: "Tip (ex: Colaborare, Full-time)", name: "tip", widget: "string", required: false }
+              - { label: "Descriere scurtă", name: "descriere", widget: "text", required: false }
+              - { label: "Ce oferim (gol = se folosesc cele generale)", name: "beneficii", widget: "list", required: false }
+              - { label: "Ce căutăm (gol = se folosesc cele generale)", name: "cerinte", widget: "list", required: false }
 
   # ===== BLOG =====
   - name: "blog"
