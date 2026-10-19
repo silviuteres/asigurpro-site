@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – solicită o ofertă de asigurare | AsigurPro</title>
+<meta name="description" content="Contactează-l pe Teres Silviu, broker AsigurPro – Destine Holding. Ofertă gratuită, răspuns în maximum 24 de ore.">
+<link rel="canonical" href="https://asigurpro.ro/contact/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact – solicită o ofertă de asigurare | AsigurPro">
+<meta property="og:description" content="Contactează-l pe Teres Silviu, broker AsigurPro – Destine Holding. Ofertă gratuită, răspuns în maximum 24 de ore.">
+<meta property="og:url" content="https://asigurpro.ro/contact/">
+<meta property="og:locale" content="ro_RO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body data-page="contact">
+<nav>
+  <a href="/" class="nav-logo">Asigur<span>Pro</span><span class="nav-sub">DESTINE HOLDING · RAF242468</span></a>
+  <div class="nav-links" id="nav-links"><a href="/anunturi/">Anunțuri</a><a href="/servicii/">Servicii</a><a href="/echipa/">Echipa</a><a href="/blog/">Blog</a><a href="/cariera/">Cariera</a><a href="/recenzii/">Recenzii</a><a href="/contact/" class="active">Contact</a></div>
+  <div class="nav-right">
+    <a id="nav-smartsales-btn" class="nav-cta" style="display:none;background:#1a8a4a" target="_blank" rel="noopener"></a>
+    <a href="/contact/" class="nav-cta">Solicită ofertă</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Meniu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<main class="subpage"><section class="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-tag">Contact</span>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,34px);color:var(--dark);margin-bottom:12px">Hai să vorbim despre asigurarea ta</h1>
+      <p>Completează formularul sau sună direct. Teres Silviu îți răspunde în cel mai scurt timp cu o ofertă personalizată.</p>
+      <div class="contact-infos">
+        <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><p class="cinfo-label">Telefon</p><p class="cinfo-val" id="contact-telefon">0758 873 736</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">👤</div><div><p class="cinfo-label">Broker Senior</p><p class="cinfo-val" id="contact-broker">Teres Silviu</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🏢</div><div><p class="cinfo-label">Companie</p><p class="cinfo-val" id="contact-companie">Destine Holding · RAF242468</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div><p class="cinfo-label">Program</p><p class="cinfo-val" id="contact-program">Luni–Vineri, 09:00–18:00</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🗺️</div><div><p class="cinfo-label">Zonă de activitate</p><p class="cinfo-val">Toată România</p></div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h2 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--dark);margin-bottom:22px">Solicită o ofertă gratuită</h2>
+      <div class="contact-raf">Broker autorizat: <strong>Teres Silviu</strong> · Destine Holding · Cod RAF: <strong>RAF242468</strong></div>
+      <div id="form-success" class="form-success">✅ Cererea a fost trimisă! Teres Silviu te va contacta în curând.</div>
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Nu completa acest câmp dacă ești om: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="fg"><label for="f-nume">Nume *</label><input type="text" id="f-nume" name="nume" placeholder="Prenume Nume" required></div>
+          <div class="fg"><label for="f-tel">Telefon *</label><input type="tel" id="f-tel" name="telefon" placeholder="07xx xxx xxx" required></div>
+        </div>
+        <div class="fg"><label for="f-tip">Tip asigurare *</label><select id="f-tip" name="tip_asigurare" required><option value="">Alege tipul...</option><option>Auto — RCA</option><option>Auto — CASCO</option><option>Locuință</option><option>Sănătate / Viață</option><option>Business</option><option>Credit</option><option>Turism / Călătorie</option></select></div>
+        <div class="fg"><label for="f-msg">Mesaj (opțional)</label><textarea id="f-msg" name="mesaj" placeholder="Descrie pe scurt ce ai nevoie..."></textarea></div>
+        <div class="fg" style="flex-direction:row;align-items:flex-start;gap:8px">
+          <input type="checkbox" id="gdpr-contact" name="acord_gdpr" required style="margin-top:4px;width:auto">
+          <label for="gdpr-contact" style="font-size:13px;line-height:1.5">Sunt de acord ca datele mele să fie prelucrate pentru a fi contactat/ă în legătură cu solicitarea de ofertă, conform <a href="/confidentialitate/" target="_blank" style="color:var(--orange)">Politicii de Confidențialitate</a>. *</label>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Trimite cererea</button>
+      </form>
+    </div>
+  </div>
+</section>
+<section id="newsletter-section" style="display:none;background:var(--off-white);padding:56px 5%;text-align:center">
+  <div style="max-width:560px;margin:0 auto">
+    <h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:10px">Abonează-te la newsletter</h2>
+    <p style="color:var(--gray);margin-bottom:24px">Sfaturi despre asigurări, oferte și noutăți — direct în inbox, fără spam.</p>
+    <div id="newsletter-embed-container"></div>
+  </div>
+</section></main><footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      Asigur<span>Pro</span>
+      <p>Teres Silviu · Broker Senior<br>Destine Holding · Cod RAF242468<br>Autorizat ASF · Toată România</p>
+    </div>
+    <div class="footer-links">
+      <h4>Companie</h4>
+      <a href="/servicii/">Servicii</a>
+      <a href="/echipa/">Echipa noastră</a>
+      <a href="/anunturi/">Anunțuri &amp; Oferte</a>
+      <a href="/blog/">Blog</a>
+      <a href="/cariera/">Cariera</a>
+      <a href="/recenzii/">Recenzii clienți</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="/contact/">Solicită ofertă</a>
+      <a href="tel:0758873736">0758 873 736</a>
+    </div>
+    <div class="footer-links">
+      <h4>Informații legale</h4>
+      <a href="/confidentialitate/">Politica de Confidențialitate</a>
+      <a href="/cookies/">Politica de Cookie-uri</a>
+      <a href="#" id="open-cookie-settings">Setări cookie-uri</a>
+    </div>
+  </div>
+  <div class="sal-row">
+    <p>Soluționarea alternativă a litigiilor (SAL): în cazul unui litigiu cu noi sau cu asigurătorul, după ce ai încercat să îl rezolvi direct cu noi, poți apela gratuit la SAL-FIN, entitatea de soluționare alternativă a litigiilor din domeniul financiar non-bancar (asigurări), organizată de ASF.</p>
+    <a class="sal-btn" href="https://www.salfin.ro" target="_blank" rel="noopener">⚖️ SAL-FIN (ASF)</a>
+    <a class="sal-btn" href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">⚖️ ANPC – SAL</a>
+    <a class="sal-btn" href="https://asfromania.ro/consumatori/petitii" target="_blank" rel="noopener">📝 Petiții ASF</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AsigurPro · Teres Silviu · Destine Holding</span>
+    <span>Broker autorizat ASF · RAF242468</span>
+  </div>
+</footer>
+
+<div id="cookie-banner" class="ck-banner" role="dialog" aria-label="Cookie-uri" hidden>
+  <p>Folosim cookie-uri necesare pentru funcționarea site-ului și, doar cu acordul tău, cookie-uri de statistică și marketing. Poți accepta, refuza sau alege. Detalii în <a href="/cookies/">Politica de Cookie-uri</a>.</p>
+  <div class="ck-actions">
+    <button class="ck-btn" id="ck-reject">Refuz</button>
+    <button class="ck-btn" id="ck-settings">Setări</button>
+    <button class="ck-btn ck-primary" id="ck-accept">Accept toate</button>
+  </div>
+</div>
+<div id="cookie-modal" class="ck-modal" role="dialog" aria-label="Setări cookie-uri" hidden>
+  <div class="ck-box">
+    <h2>Setări cookie-uri</h2>
+    <p>Alege ce categorii de cookie-uri accepți. Poți schimba oricând alegerea din linkul „Setări cookie-uri” din subsolul paginii.</p>
+    <div class="ck-row"><div><strong>Necesare</strong><span>Asigură funcționarea site-ului (ex.: formulare, salvarea alegerii tale). Nu pot fi dezactivate.</span></div><input type="checkbox" checked disabled></div>
+    <div class="ck-row"><div><strong>Statistică</strong><span>Ne ajută să înțelegem cum este folosit site-ul, în mod agregat.</span></div><input type="checkbox" id="ck-statistici"></div>
+    <div class="ck-row"><div><strong>Marketing</strong><span>Folosite pentru reclame personalizate și măsurarea campaniilor.</span></div><input type="checkbox" id="ck-marketing"></div>
+    <div class="ck-actions">
+      <button class="ck-btn" id="ck-close">Închide</button>
+      <button class="ck-btn ck-primary" id="ck-save">Salvează alegerea</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/40758873736" id="wa-btn" target="_blank" rel="noopener" class="wa-btn" title="Scrie-ne pe WhatsApp">💬</a>
+<script src="/assets/app.js"></script>
+</body>
+</html>

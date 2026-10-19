@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://asigurpro.ro/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://asigurpro.ro/</loc></url>
+  <url><loc>https://asigurpro.ro/servicii/</loc></url>
+  <url><loc>https://asigurpro.ro/anunturi/</loc></url>
+  <url><loc>https://asigurpro.ro/echipa/</loc></url>
+  <url><loc>https://asigurpro.ro/blog/</loc></url>
+  <url><loc>https://asigurpro.ro/cariera/</loc></url>
+  <url><loc>https://asigurpro.ro/recenzii/</loc></url>
+  <url><loc>https://asigurpro.ro/contact/</loc></url>
+  <url><loc>https://asigurpro.ro/confidentialitate/</loc></url>
+  <url><loc>https://asigurpro.ro/cookies/</loc></url>
 </urlset>
