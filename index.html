@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anunțuri și oferte | AsigurPro</title>
-<meta name="description" content="Oferte de sezon, noutăți și anunțuri despre asigurări, publicate de AsigurPro. Află ce se schimbă și cere o ofertă personalizată, fără costuri.">
-<link rel="canonical" href="https://asigurpro.ro/anunturi/">
+<title>AsigurPro – Broker Destine Holding | Teres Silviu</title>
+<meta name="description" content="Broker de asigurări autorizat ASF: RCA, CASCO, locuință, sănătate, business și călătorie. Compari oferte și primești răspuns în maximum 24 de ore.">
+<link rel="canonical" href="https://asigurpro.ro/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Anunțuri și oferte | AsigurPro">
-<meta property="og:description" content="Oferte de sezon, noutăți și anunțuri despre asigurări, publicate de AsigurPro. Află ce se schimbă și cere o ofertă personalizată, fără costuri.">
-<meta property="og:url" content="https://asigurpro.ro/anunturi/">
+<meta property="og:title" content="AsigurPro – Broker Destine Holding | Teres Silviu">
+<meta property="og:description" content="Broker de asigurări autorizat ASF: RCA, CASCO, locuință, sănătate, business și călătorie. Compari oferte și primești răspuns în maximum 24 de ore.">
+<meta property="og:url" content="https://asigurpro.ro/">
 <meta property="og:locale" content="ro_RO">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"InsuranceAgency","name":"AsigurPro – Destine Holding","url":"https://asigurpro.ro/","telephone":"+40758873736","areaServed":"RO","founder":{"@type":"Person","name":"Teres Silviu"},"priceRange":"$$"}
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
@@ -22,15 +24,15 @@
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="AsigurPro">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anunțuri și oferte | AsigurPro">
-<meta name="twitter:description" content="Oferte de sezon, noutăți și anunțuri despre asigurări, publicate de AsigurPro. Află ce se schimbă și cere o ofertă personalizată, fără costuri.">
+<meta name="twitter:title" content="AsigurPro – Broker Destine Holding | Teres Silviu">
+<meta name="twitter:description" content="Broker de asigurări autorizat ASF: RCA, CASCO, locuință, sănătate, business și călătorie. Compari oferte și primești răspuns în maximum 24 de ore.">
 <meta name="twitter:image" content="https://asigurpro.ro/icons/og-image.jpg">
 <link rel="stylesheet" href="/assets/style.0828ecf1.css">
 </head>
-<body data-page="anunturi">
+<body data-page="acasa">
 <nav>
   <a href="/" class="nav-logo" aria-label="AsigurPro – pagina principală"><img src="/assets/logo-alb.8c090f47.png" alt="AsigurPro – broker de asigurare" width="140" height="40"></a>
-  <div class="nav-links" id="nav-links"><a href="/anunturi/" class="active">Anunțuri</a><a href="/servicii/">Servicii</a><a href="/echipa/">Echipa</a><a href="/blog/">Blog</a><a href="/cariera/">Cariera</a><a href="/recenzii/">Recenzii</a><a href="/contact/">Contact</a></div>
+  <div class="nav-links" id="nav-links"><a href="/anunturi/">Anunțuri</a><a href="/servicii/">Servicii</a><a href="/echipa/">Echipa</a><a href="/blog/">Blog</a><a href="/cariera/">Cariera</a><a href="/recenzii/">Recenzii</a><a href="/contact/">Contact</a></div>
   <div class="nav-right">
     <a id="nav-smartsales-btn" class="nav-cta" style="display:none;background:#1a8a4a" target="_blank" rel="noopener"></a>
     <a href="/contact/" class="nav-cta">Solicită ofertă</a>
@@ -38,27 +40,85 @@
   </div>
 </nav>
 
-<main class="subpage"><section class="anunturi">
+<div class="ticker-wrap"><div class="ticker-track" id="ticker-track"></div></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-badge">🛡 Broker autorizat · Destine Holding · Toată România</span>
+      <h1>Asigurări pentru<br><em>orice ai nevoie</em></h1>
+      <p class="hero-sub">Broker senior de asigurări — auto, locuință, sănătate, business, credite și turism. Ofertă gratuită în mai puțin de 24 ore, în toată România.</p>
+      <div class="hero-raf">Cod broker: <strong>RAF242468</strong> · Destine Holding</div>
+      <div class="hero-actions">
+        <a id="hero-tel-btn" href="tel:0758873736" class="btn-orange">📞 0758 873 736</a>
+        <a href="/contact/" class="btn-ghost">Trimite o cerere</a>
+        <a id="hero-smartsales-btn" class="btn-orange" style="display:none;background:#1a8a4a" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h2>Solicită o ofertă rapidă</h2>
+      <div class="mini-form">
+        <select id="mini-tip" aria-label="Tip asigurare"><option value="">Tip asigurare</option><option>Auto — RCA</option><option>Auto — CASCO</option><option>Locuință</option><option>Sănătate / Viață</option><option>Business</option><option>Credit</option><option>Turism / Călătorie</option></select>
+        <button type="button" id="mini-go">Continuă →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar"><div class="stats-inner">
+  <div><span class="stat-num">6+</span><p class="stat-label">Tipuri de asigurări</p></div>
+  <div><span class="stat-num">100%</span><p class="stat-label">Consiliere gratuită</p></div>
+  <div><span class="stat-num">24h</span><p class="stat-label">Timp de răspuns</p></div>
+  <div><span class="stat-num">🇷🇴</span><p class="stat-label">Toată România</p></div>
+</div></div>
+
+<section class="services">
+  <div class="section-header">
+    <span class="section-tag">Portofoliu complet</span>
+    <h2 class="section-title">Toate tipurile de asigurări</h2>
+    <p class="section-sub">Lucrăm cu toți asigurătorii autorizați din România și îți găsim cea mai bună ofertă.</p>
+  </div>
+  <div class="services-grid" id="services-grid" data-limit="6"></div>
+  <p class="more-link"><a href="/servicii/">Vezi toate serviciile →</a></p>
+</section>
+
+<section class="anunturi">
   <div class="section-header">
     <span class="section-tag">Noutăți &amp; Oferte</span>
-    <h1 class="section-title">Anunțuri recente</h1>
-    <p class="section-sub">Cursuri, oferte speciale și noutăți din lumea asigurărilor.</p>
+    <h2 class="section-title">Anunțuri recente</h2>
   </div>
-  <div class="anunturi-grid" id="anunturi-grid"></div>
-</section><section class="info-section"><div class="info-inner">
-<h2>Ce găsești în această pagină</h2>
-<p>Aici publicăm noutăți din lumea asigurărilor: oferte de sezon, cursuri și evenimente, precum și schimbări care îi pot afecta pe clienți, de exemplu reînnoiri, termene sau modificări de reglementare. Fiecare anunț are o dată sau o perioadă de valabilitate, ca să știi dacă îți mai este util.</p>
-<h2>Cum folosești o ofertă</h2>
-<ol class="steps">
-  <li><strong>Citește condițiile din anunț</strong> și perioada de valabilitate.</li>
-  <li><strong>Cere o ofertă personalizată.</strong> Prețul și acoperirile depind de situația ta concretă, așa că anunțurile au caracter informativ.</li>
-  <li><strong>Te contactăm în maximum 24 de ore</strong> cu detaliile și, dacă te hotărăști, emitem polița online.</li>
-</ol>
-<p style="margin-top:20px"><a href="/contact/"><strong>Cere o ofertă gratuită →</strong></a></p>
+  <div class="anunturi-grid" id="anunturi-grid" data-limit="3"></div>
+  <p class="more-link"><a href="/anunturi/">Toate anunțurile →</a></p>
+</section>
 
-<h2>De ce contează termenele</h2>
-<p>Multe asigurări se reînnoiesc anual, iar o poliță expirată, în special RCA, te poate expune la amenzi și la riscul de a nu fi despăgubit după un accident. De aceea îți recomandăm să ții evidența datei de expirare și să ne contactezi cu două-trei săptămâni înainte, ca să poți compara ofertele fără grabă.</p>
-</div></section></main><footer>
+<section class="why">
+  <div class="why-grid">
+    <div class="why-text">
+      <span class="section-tag">De ce AsigurPro</span>
+      <h2>Un broker de <em>încredere</em>, nu un ghișeu</h2>
+      <p>Teres Silviu și echipa Destine Holding te ajută să înțelegi exact ce cumperi, ce acoperă polița ta și cum poți depune o daună fără bătăi de cap.</p>
+      <div class="why-list">
+        <div class="why-item"><div class="why-dot"></div><p><strong>Comparăm toți asigurătorii</strong> — îți prezentăm cele mai bune oferte din piață, nu doar de la o singură companie.</p></div>
+        <div class="why-item"><div class="why-dot"></div><p><strong>Suport complet la daune</strong> — te ajutăm să întocmești dosarul și să urmărești plata despăgubirii.</p></div>
+        <div class="why-item"><div class="why-dot"></div><p><strong>Serviciu în toată România</strong> — polițele se pot emite online, fără deplasare.</p></div>
+        <div class="why-item"><div class="why-dot"></div><p><strong>Consiliere 100% gratuită</strong> — nu plătești nimic pentru consultație sau ofertă.</p></div>
+      </div>
+    </div>
+    <div class="why-cards">
+      <div class="why-card"><span class="why-card-num">6+</span><p>categorii de asigurări disponibile</p></div>
+      <div class="why-card"><span class="why-card-num">24h</span><p>timp maxim de răspuns la orice cerere</p></div>
+      <div class="why-card"><span class="why-card-num">0 lei</span><p>costul consultației și al ofertei</p></div>
+      <div class="why-card"><span class="why-card-num">🇷🇴</span><p>acoperire națională, toată România</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ai nevoie de o ofertă?</h2>
+  <p>Răspundem în maximum 24 de ore, fără costuri pentru tine.</p>
+  <a href="/contact/">Solicită ofertă gratuită</a>
+</section>
+<footer>
   <div class="footer-inner">
     <div class="footer-logo">
       <a href="/" class="footer-logo-img"><img src="/assets/logo-alb.8c090f47.png" alt="AsigurPro – broker de asigurare" width="175" height="50"></a>
