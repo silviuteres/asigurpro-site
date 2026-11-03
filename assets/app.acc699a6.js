@@ -293,3 +293,23 @@ $('cariere-success').style.display = 'block';
 });
 }
 })();
+;(function () {
+  function adauga(container) {
+    if (!container || container.querySelector('a[href="/vacante/"]')) return;
+    var ref = container.querySelector('a[href="/servicii/"]');
+    if (!ref) return;
+    var a = document.createElement('a');
+    a.href = '/vacante/';
+    a.textContent = 'Vacante';
+    ref.insertAdjacentElement('afterend', a);
+  }
+  function porneste() {
+    adauga(document.getElementById('nav-links'));
+    document.querySelectorAll('.footer-links').forEach(adauga);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', porneste);
+  } else {
+    porneste();
+  }
+})();
