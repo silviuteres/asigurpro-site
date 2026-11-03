@@ -1,0 +1,9 @@
+{
+  "items": [
+    {"dest": "Antalya, Turcia", "data": "plecare 12 nov · 7 nopți", "pret": "de la 389 €"},
+    {"dest": "Hurghada, Egipt", "data": "plecare 15 nov · 7 nopți", "pret": "de la 449 €"},
+    {"dest": "Creta, Grecia", "data": "plecare 20 nov · 5 nopți", "pret": "de la 359 €"},
+    {"dest": "Dubai", "data": "plecare 28 nov · 5 nopți", "pret": "de la 619 €"},
+    {"dest": "Tenerife", "data": "plecare 3 dec · 7 nopți", "pret": "de la 529 €"}
+  ]
+}
