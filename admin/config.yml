@@ -162,3 +162,21 @@ collections:
               - { label: "Textul recenziei", name: "text", widget: "text" }
               - { label: "Numele autorului", name: "autor", widget: "string" }
               - { label: "Tip asigurare", name: "tip", widget: "string" }
+
+  # ===== VACANTE (banda last minute) =====
+  - name: "vacante"
+    label: "🌴 Vacante last minute"
+    files:
+      - name: "vacante"
+        label: "Oferte pe banda de sus"
+        file: "data/vacante.json"
+        fields:
+          - name: "items"
+            label: "Oferte"
+            widget: "list"
+            label_singular: "Ofertă"
+            summary: "{{fields.dest}} – {{fields.pret}}"
+            fields:
+              - { label: "Destinație (ex: Antalya, Turcia)", name: "dest", widget: "string" }
+              - { label: "Detalii (ex: plecare 12 nov · 7 nopți)", name: "data", widget: "string" }
+              - { label: "Preț (ex: de la 389 €)", name: "pret", widget: "string" }
